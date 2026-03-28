@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor - VSCode
+.vscode/
+
+# Editor - JetBrains (IntelliJ, GoLand, etc.)
+.idea/
+*.iml
+
+# Editor - Vim/Neovim
+*.swp
+*.swo
+
+# Kubernetes
+*.kubeconfig
+kubeconfig
