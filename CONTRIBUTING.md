@@ -109,7 +109,7 @@ Closes #
 - 하나의 PR은 하나의 목적만 가진다
 - PR 제목에 `[WIP]` 접두사를 붙이면 Draft PR로 간주
 - 머지 전 최소 1명의 리뷰 승인 필요
-- `master` 브랜치에 직접 push 금지
+- `main` 브랜치에 직접 push 금지
 - CI가 실패한 상태에서 머지 금지
 - 머지 방식: **Squash and Merge** 사용 (커밋 히스토리 단순화)
 
@@ -125,4 +125,5 @@ Closes #
 5. 리뷰 요청
 6. 승인 후 Squash and Merge
 7. 브랜치 삭제
+
 ```
