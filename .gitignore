@@ -17,3 +17,6 @@
 # Kubernetes
 *.kubeconfig
 kubeconfig
+
+# Claude Code
+CLAUDE.md
