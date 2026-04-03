@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: readiness-pod
+  labels:
+    app: readiness
+spec:
+  containers:
+  - name: readiness
+    image: nginx
+    readinessProbe:
+      httpGet:
+        path: /
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 5
+
+
+
+
+# Pod 시작
+#   → 5초 대기 (initialDelaySeconds)
+#   → nginx :80/ 로 HTTP GET 요청
+#   → 200 응답 오면 → READY 1/1 ✅ (트래픽 받을 수 있음)
+#   → 응답 없으면  → READY 0/1 ❌ (트래픽 차단)
+#   → 5초마다 반복 체크

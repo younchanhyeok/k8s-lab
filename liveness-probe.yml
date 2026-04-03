@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-pod
+spec:
+  containers:
+  - name: liveness
+    image: busybox
+    args:
+    - /bin/sh
+    - -c
+    - touch /tmp/healthy; sleep 30; rm /tmp/healthy; sleep 600
+    livenessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/healthy
+      initialDelaySeconds: 5    # 5초 후부터 체크 시작
+      periodSeconds: 5          # 5초마다 체크
+      failureThreshold: 3       # 3번 연속 실패하면 재시작
+
+
+### 동작 원리
+
+# Pod 시작
+#   → /tmp/healthy 파일 생성
+#   → 30초 동안 정상 (Probe: cat /tmp/healthy → 성공)
+#   → 30초 후 /tmp/healthy 파일 삭제
+#   → Probe 실패 시작 (cat /tmp/healthy → 파일 없음!)
+#   → 3번 실패하면 → 컨테이너 재시작! 🔄
