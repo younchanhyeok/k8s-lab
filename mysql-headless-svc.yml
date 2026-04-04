@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: mysql-headless
 spec:
-  clusterIP: None
+  clusterIP: None # headless service
   selector:
     app: mysql
   ports:
