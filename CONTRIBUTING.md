@@ -28,7 +28,7 @@ docs/3-update-readme
 ## 커밋 메시지 (Conventional Commits)
 
 ```
-<type>(<scope>): <subject>
+<type>: <subject>
 
 [body]
 
@@ -55,7 +55,7 @@ docs/3-update-readme
 
 **예시**
 ```
-feat(deployment): add nginx deployment manifest
+feat: add nginx deployment manifest
 
 Add rolling update strategy with maxSurge 1 and maxUnavailable 0
 to ensure zero-downtime deployments.
